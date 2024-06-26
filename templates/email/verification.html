@@ -1,0 +1,38 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %} Hanapp 🤖 Activation Email{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}You're receiving this email because you need to finish activation For Your Account.{% endblocktrans %}
+
+{% trans "Please go to the following page to activate account:" %}
+{{ protocol }}://{{ domain }}/{{ url|safe }}
+
+{% trans "Thanks for using our site!" %}
+
+{% blocktrans %}The Suki  team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+
+
+<div style="font-family: Arial, Helvetica, sans-serif; height: 390px;padding:10px 10px 20px 30px;background-color:#E3DC50; width:600px;">
+        
+    <h4 style=" font-family: Arial, Helvetica, sans-serif;font-weight: 700; font-size:30px;">
+        Hello Dear User,
+    </h4>
+
+    <p style="font-size: 20px;font-weight: 100;">Thank you for signing up for our service! To activate your account, please click on the activation button below:</p>
+
+    <p style="color:black; margin:50px 0px  ">
+        <a href="http://localhost:3000/{{ url|safe }}" style="background-color: #b2e4ec;  width:110px;border-radius: 10px;margin-top:20px;color:white;font-size:19px; padding:15px 20px 15px 20px;text-decoration: none;"  href="">Proceed to Activation</a>
+    </p>
+
+    <p  style="margin-top:50px; font-size: 18px;"><i>Thank you,</i>  <br> <b style="color: #222222;font-weight: 700; font-size:20px; ">The BeSagUnsa team </b> </p>
+
+    
+</div>
+
+{% endblock html_body %}
